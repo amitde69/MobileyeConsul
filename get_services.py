@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import sys
+import sys, requests
 from service import GetServices
 
 

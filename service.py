@@ -1,4 +1,4 @@
-import requests, json, os
+import requests, json
 
 
 class GetServices:
@@ -10,15 +10,18 @@ class GetServices:
         self.print_services()
 
     def print_services(self):
-        # Print services and IPs
-        for service in self.get_all_services():
-            print("Service Name: " + str(service).upper() + "\nService IPs: "
-                  + str(self.get_service_ip(service)) + "\n")
+        try:
+            # Print services and IPs
+            for service in self.get_all_services():
+                print("Service Name: " + str(service).upper() + "\nService IPs: "
+                      + str(self.get_service_ip(service)) + "\n")
+        except:
+            print('The service URL you entered is not available or doesnt exist!!')
 
     def get_all_services(self):
-        contents = requests.get(self.consul_services).text
+        contents = requests.get(self.consul_services)
         # Parse json to dictionary
-        services = json.loads(contents)
+        services = json.loads(contents.text)
         return services
 
     def get_service_ip(self, service_name):
