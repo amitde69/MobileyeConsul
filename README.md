@@ -1,5 +1,5 @@
 # MobileyeConsul
-#### This script discovers which services a server exposes.
+#### This script discovers which services a server exposes, and their Internal IPs.
 
 ## Prerequisites
 * Make sure you have Python installed.
