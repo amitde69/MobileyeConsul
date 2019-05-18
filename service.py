@@ -10,8 +10,9 @@ class GetServices:
         self.print_services()
 
     def print_services(self):
+        # Check for input error
         try:
-            # Print services and IPs
+            # Print Services and IPs
             for service in self.get_all_services():
                 print("Service Name: " + str(service).upper() + "\nService IPs: "
                       + str(self.get_service_ip(service)) + "\n")
