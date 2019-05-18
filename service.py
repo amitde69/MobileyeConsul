@@ -37,7 +37,7 @@ class GetServices:
 
         # Append service addresses to addresses list
         for address in data:
-            addresses.append(address['Address'])
+            addresses.append(str(address['Address']))
 
         # Print addresses list
         return addresses
